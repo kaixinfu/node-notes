@@ -2,10 +2,13 @@ const http = require('http');
 const fs = require('fs');
 const {promisify} = require('util');
 const readFile = promisify(fs.readFile);
+const {getPrototype} = require('../common/getPrototype')
 const server = http.createServer(async (req, res) => {
     const {url, method} = req;
     // console.log('url...', url);
     // console.log('method...', method);
+    // console.log('req', getPrototype(req));
+    // console.log('res', getPrototype(res));
     if (url === '/' && method === 'GET') {
         fs.readFile('./index.html', (err, data) => {
             if (err) {
@@ -19,10 +22,12 @@ const server = http.createServer(async (req, res) => {
                 return
             }
         })
-    } else if (url === '/users' && method === 'GET') {
+    } else if (url === '/user' && method === 'GET') {
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");
         res.end(JSON.stringify({name: '....liu', age: 10}))
+    } else if (method === 'GET' && req.headers.accept.indexOf('image/*') !== -1) {
+        fs.createReadStream('.' + url).pipe(res)
     } else {
         res.serHeader = 404;
         res.setHeader('Content-Type', 'text/plain;charset=utf-8');
