@@ -21,5 +21,10 @@
 ├──http                          // 服务
 │   ├── index.js                 // 启动server、访问接口
 ├── package.json                 // 项目配置文件
+├──vue-kx-router-cli             // 类似nuxt的cli脚本
+│   ├── bin                      
+│       ├── kx.js                // 自定义命令init、refresh
+│   ├── lib              
+│       ├── api.js               // lib需要的方法(complie: 根据模板生产路由文件)
 </pre>
 
