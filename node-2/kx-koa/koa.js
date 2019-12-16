@@ -8,21 +8,31 @@ const context = require("./context");
 const request = require("./request");
 const response = require("./response");
 
+const {compose} = require('./compose')
+
 class Koa {
+    constructor() {
+        this.callbacks = []
+    }
     /**
      * 创建一个http服务，启动
      * @param  {...any} args 
      */
     listen(...args) {
-        const server = http.createServer((req, res) => {
+        const server = http.createServer(async (req, res) => {
             let ctx = this.createContext(req, res);
-            this.callback(ctx);
+            // this.callback(ctx);
+            // 将所有中间件传入合成函数
+            const fn = compose(this.callbacks);
+            // 调用该函数，依次调用每个方法，修改传入的参数
+            await fn(ctx);
+            console.log('ctx', ctx);
             res.end(ctx.body)
         });
         server.listen(...args)
     }
     use(callback) {
-        this.callback = callback
+        this.callbacks.push(callback);
     }
     /**
      * 此时的Object.create方法只是让左边变量上具有那些存取器的方法
