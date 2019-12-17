@@ -39,8 +39,8 @@ class Koa {
      * 例如在listen中访问ctx.body:
      * 实际上是调用自身原型上的方法，即context的get方法，访问this(当前实例对象：new Koa() 对象实例)上的body;
      * 搞了半天，其实就是封装了一下存取方法，增加了可读性而已
-     * @param {*} req 
-     * @param {*} res 
+     * @param {*} req
+     * @param {*} res
      */
     createContext(req, res) {
         const ctx = Object.create(context);

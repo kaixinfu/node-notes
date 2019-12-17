@@ -47,5 +47,8 @@
 <pre>
 ├── im                      
 │   ├── index.js                 // 使用net创建连接服务，实现通讯
+├── http                     
+│   ├── index.js                 // 服务、接口
+│   ├── index.html               // 用来观察请求、响应对象
 </pre>
 
