@@ -1,4 +1,4 @@
-const Index = require('./koa');
+const Index = require('../kx-koa');
 const app = new Index();
 const port = 3000;
 app.listen(port, () => {

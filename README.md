@@ -10,18 +10,18 @@
 │   ├── promise.js               // promise实现方法
 ├── down                         // 下载
 │   ├── index.js                 // 测试下载方法
-├── fs                            // 读取文件操作
+├── fs                           // 读取文件操作
 │   ├── sync.js                  // 同步读取
 │   ├── async.js                 // 异步读取
 │   ├── promisefy.js             // 包装后的异步读取
 ├── os                           // 操作系统
 │   ├── index.js                 // 查看cpu使用率
-├── stream                        // 文件流
+├── stream                       // 文件流
 │   ├── index.js                 // 创建图片流、文件流
-├── http                          // 服务
+├── http                         // 服务
 │   ├── index.js                 // 启动server、访问接口
 ├── package.json                 // 项目配置文件
-├── vue-kx-router-cli             // 类似nuxt的cli脚本
+├── vue-kx-router-cli            // 类似nuxt的cli脚本
 │   ├── bin                      
 │       ├── kx.js                // 自定义命令init、refresh
 │   ├── lib              
@@ -37,10 +37,17 @@
 │   ├── compose1.js              // 中间件的基本实现（同步）
 │   ├── compose2.js              // 中间件的基本实现（异步）
 │   ├── index.js                 // 使用封装的koa启动服务
-│   ├── index.js                   // 封装koa基本实现方法（createServer，中间件）
+│   ├── index.js                 // 封装koa基本实现方法（createServer，中间件）
 │   ├── context.js               // ctx对象的存取方法
 │   ├── request.js               // 请求对象的存取方法
 │   ├── response.js              // 返回对象的存取方法
+├── router                       
+│   ├── index.html               // 测试的静态文件
+│   ├── index.js                 // 使用koa-router配置路由
+├── kx-router                       
+│   ├── index.html               // 测试的静态文件
+│   ├── index.js                 // 使用Router配置路由
+│   ├── Router.js                // koa-router的源码分析
 </pre>
 
 ### node-3 (网络编程)
