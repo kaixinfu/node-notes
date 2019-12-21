@@ -30,6 +30,8 @@
 
 ### node-2 (koa的实现)
 <pre>
+├── cache                      
+│   ├── Cache.js                 // 缓存中间件
 ├── koa                      
 │   ├── index.js                 // 使用koa创建服务
 ├── kx-koa                       
