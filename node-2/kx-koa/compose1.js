@@ -22,7 +22,7 @@ console.log('....2', fn(2, 3));
  * @param  {...any} fns 
  */
 function compose2(fn1, ...fns) {
-    return function(...args) {
+    return function (...args) {
         let res = fn1(...args);
         fns.forEach(fn => {
             res = fn(res)

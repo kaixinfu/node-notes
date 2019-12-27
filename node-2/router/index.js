@@ -6,19 +6,19 @@ const router = require('koa-router')();
 app.use(require('koa-static')(__dirname + '/'));
 
 router.get('/users', async (ctx, next) => {
-    ctx.body = [{name: 'zhangsan'}, {name: 'lisi'}];
+    ctx.body = [{ name: 'zhangsan' }, { name: 'lisi' }];
     await next()
 })
 
 router.get('/user', async (ctx, next) => {
-    ctx.body = {name: 'kaixin'};
+    ctx.body = { name: 'kaixin' };
     await next()
 })
 
 router.post('/login', async (ctx, next) => {
     // 没加bodyPaser中间件，没有值...后期会优化
     console.log('ctx', ctx.request);
-    ctx.body = {messsage: '成功了', success: true};
+    ctx.body = { messsage: '成功了', success: true };
     await next()
 })
 

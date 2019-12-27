@@ -1,6 +1,7 @@
 # node-notes
 
-### node-1 (node基本api的使用)
+### node-1 (node 基本 api 的使用)
+
 <pre>
 ├── buffer                       // 存放二进制数据的缓冲区
 │   ├── index.js                 // 申请内存、创建一个buffer
@@ -28,7 +29,8 @@
 │       ├── api.js               // lib需要的方法(complie: 根据模板生产路由文件)
 </pre>
 
-### node-2 (koa的实现)
+### node-2 (koa 的实现)
+
 <pre>
 ├── cache                      
 │   ├── Cache.js                 // 缓存中间件
@@ -47,12 +49,15 @@
 │   ├── index.html               // 测试的静态文件
 │   ├── index.js                 // 使用koa-router配置路由
 ├── kx-router                       
-│   ├── index.html               // 测试的静态文件
-│   ├── index.js                 // 使用Router配置路由
 │   ├── Router.js                // koa-router的源码分析
+├── kx-static
+│   ├── static.js                // 静态文件服务
+├── iptable                       
+│   ├── Iptable.js               // 拦截黑名单的中间件
 </pre>
 
 ### node-3 (网络编程)
+
 <pre>
 ├── im                      
 │   ├── index.js                 // 使用net创建连接服务，实现通讯
@@ -60,4 +65,3 @@
 │   ├── index.js                 // 服务、接口
 │   ├── index.html               // 用来观察请求、响应对象
 </pre>
-

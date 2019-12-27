@@ -13,7 +13,7 @@ app.use(async (ctx, next) => {
     ctx.body += "2";
     await delay();
     await next();
-    ctx.body += "4";
+    ctx.body += "4" ;
 });
 app.use(async (ctx, next) => {
     ctx.body += "3";
