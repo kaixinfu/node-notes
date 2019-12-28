@@ -1,0 +1,30 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "### node-1 (node 基本 api 的使用)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liu-kaixin/node-notes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liu-kaixin/node-notes/issues"
+  },
+  "homepage": "https://github.com/liu-kaixin/node-notes#readme",
+  "dependencies": {
+    "download-git-repo": "^3.0.2",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "http-proxy-middleware": "^0.20.0",
+    "koa": "^2.11.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "ora": "^4.0.3",
+    "util": "^0.12.1"
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <body>
+    <h1>proxy</h1>
+    <form action="/login" method="post">
+      <p>账户: <input type="text" name="name" /></p>
+      <p>密码: <input type="text" name="passwords" /></p>
+      <input type="submit" value="登录" />
+    </form>
+    <form action="/loginbody" method="post">
+      <p>账户: <input type="text" name="name" /></p>
+      <p>密码: <input type="text" name="passwords" /></p>
+      <input type="submit" value="登录body" />
+    </form>
+    <script>
+      // 埋点
+      //   let img = new Image();
+      //   img.src = "/api/image?abc=123";
+      //   axios.defaults.baseURL = "http://localhost:3000";
+      //   通过设置 withCredentials: true ，发送Ajax时，Request header中便会带上 Cookie 信息
+      axios.defaults.withCredentials = true;
+      async function getData() {
+        console.log(".........a");
+        let home = "/";
+        let cors = "/cors";
+        let yujian = "/yujian";
+        let users = "/users";
+        let proxy = "/proxy";
+        let res = await axios.get(proxy);
+        // 特殊设置 会触发预检
+        // let res = await axios.get(yujian, { headers: { "X-Token": "aaa" } });
+        console.log("res", res);
+      }
+      //   getData();
+    </script>
+  </body>
+</html>
