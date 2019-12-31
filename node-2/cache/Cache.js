@@ -6,12 +6,15 @@
  * 1.首先肯定是个class，当服务启动时new一个实例，立即将从数据库中查询数据存到实例上
  * 2.计算下时间吧，毕竟一直定时刷新不好，只有当前时间接近0点时，再刷新数据
  * 3.刷新后将数据更新到该实例上
+ * 
+ * 
+ * https://github.com/su37josephxia/frontend-basic/tree/master/src/http-catch
  */
 const fnFetchData = require('./delay');
 class Cache {
-	constructor () {
+	constructor() {
 		this._time = 1000;
-		this.cache = {data: {}};
+		this.cache = { data: {} };
 		this.init();
 	}
 	async init() {
@@ -59,8 +62,8 @@ class Cache {
 	}
 	fetchData() {
 		const cache = this.cache;
-		return async function(ctx, next) {
-			const {url, method} = ctx.request;
+		return async function (ctx, next) {
+			const { url, method } = ctx.request;
 			if (url.includes('api/data') > 0 && method === 'GET') {
 				ctx.body = cache.data
 			}
