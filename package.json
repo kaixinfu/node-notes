@@ -18,7 +18,7 @@
   "homepage": "https://github.com/liu-kaixin/node-notes#readme",
   "dependencies": {
     "download-git-repo": "^3.0.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fs": "0.0.1-security",
     "http-proxy-middleware": "^0.20.0",
     "koa": "^2.11.0",
